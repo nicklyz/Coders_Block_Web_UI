@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>Coder's Block</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/dropzone.css">
@@ -15,31 +15,39 @@
         <div class="media-object">
           <div class="media-object-section">
             <div class="logo">
-              <img class="thumbnail" src="img/coders_block_logo_image.png">
+              <img src="img/coders_block_logo_image.png">
             </div>
           </div>
         </div>
-      </div>    
+      </div>
+    </div>
+		
+		<div class="row">
+		  <p>A project by <a href="https://github.com/nhadfieldmenell/">Noah Hadfield-Menell</a>, <a href="https://github.com/orpgol">Orpaz Steinson</a>, and <a href="https://github.com/nicklyz">Yanzhe Liu</a>.</p>
     </div>
     
     <div class="row">
       <div class="large-6 columns">
-        <div class="callout secondary">
-          <h3>Please Upload Your Files Here.</h3>
-          <p>You can drag and drop your python script here. Coder's Block will automatically generate suggested StackOverflow question posts.</p>
+        <div class="callout secondary box">
+          <h3>Upload Your File Here.</h3>
+          <p>You can drag and drop your python script here. Coder's Block will automatically generate related StackOverflow  posts.</p>
           <div class="row">
-            <form action="/file-upload"
+            <form
               class="dropzone"
-              id="my-awesome-dropzone"></form>
+              id="droparea"></form>
           </div>
         </div>
       </div>
       <div class="large-6 columns">
-				<div class="callout secondary">
-          <h3>Results:</h3>
-          
-          <ul class="results">
-            <li><a></a></li>
+				<div class="callout secondary box">
+          <h3>StackOverflow posts:</h3>
+
+          <ul id="results">
+            <li><a href="http://stackoverflow.com/questions/10171844">Breadth First Traversal for a Tree, Python</a></li>
+            <li><a href="http://stackoverflow.com/questions/10154362">Breadth first search implementation in Python</a></li>
+            <li><a href="http://stackoverflow.com/questions/8922060">How to trace the path in a Breadth-First Search?</a></li>
+            <li><a href="http://stackoverflow.com/questions/15524902">Recursive function for trees in Python</a></li>
+            <li><a href="http://stackoverflow.com/questions/10218953">Tie breaking in a priority queue using python</a></li>
           </ul>
         </div>
 			</div>

@@ -1,4 +1,52 @@
 .logo{
-  width: 50%;
+  width: 30%;
   margin: 0 auto 0 auto;
+}
+
+.row {
+  text-align: center;
+}
+
+#results {
+  text-align: left;
+}
+body {
+	font-weight: bold;
+}
+
+#droparea{
+	width: 400px;
+	min-height: 200px;
+	margin: auto auto auto auto;
+	padding: 0 20px;
+	border: 4px solid rgba(0, 82, 156, 0.8);
+}
+
+#previewsContainer {
+	width: 300px;
+	min-height: 280px;
+	padding: 10px 20px;
+	background: #FFF;
+	margin: 0 auto 20px;
+}
+
+#selectImage {
+	color: #FFF;
+	width: 200px;
+	text-align: center;
+	padding: 10px 0;
+	background: rgba(0, 82, 156, 0.5);
+	float: left;
+	cursor: pointer;
+}
+
+#fileSubmit {
+	color: #FFF;
+	width: 200px;
+	margin: 0 0 0 30px;
+	text-align: center;
+	padding: 10px 0;
+	background: rgba(0, 82, 156, 0.5);
+	float: left;
+	cursor: pointer;
 }
