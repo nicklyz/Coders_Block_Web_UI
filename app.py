@@ -2,7 +2,7 @@ from flask import (
     Flask,
     request,
     render_template,
-    # send_from_directory,
+    send_from_directory,
     url_for,
     jsonify
 )
@@ -50,14 +50,14 @@ def dated_url_for(endpoint, **values):
     return url_for(endpoint, **values)
 
 
-# @app.route('/css/<path:filename>')
-# def css_static(filename):
-#     return send_from_directory(app.root_path + '/static/css/', filename)
-#
-#
-# @app.route('/js/<path:filename>')
-# def js_static(filename):
-#     return send_from_directory(app.root_path + '/static/js/', filename)
+@app.route('/css/<path:filename>')
+def css_static(filename):
+    return send_from_directory(app.root_path + '/static/css/', filename)
+
+
+@app.route('/js/<path:filename>')
+def js_static(filename):
+    return send_from_directory(app.root_path + '/static/js/', filename)
 
 
 @app.route('/')
@@ -68,8 +68,9 @@ def index():
 def upload():
     if request.method == 'POST':
         files = request.files.getlist('file[]')
-        for f in files:
-            return jsonify(name="ok")
+        sample_result = ["http://stackoverflow.com/questions/10171844","http://stackoverflow.com/questions/10154362","http://stackoverflow.com/questions/8922060",
+        "http://stackoverflow.com/questions/15524902", "http://stackoverflow.com/questions/10218953"]
+        return jsonify(results=sample_result)
 
 @app.route('/uploadajax', methods=['POST'])
 def upldfile():

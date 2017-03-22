@@ -1,3 +1,4 @@
+
 $(document).foundation()
 
 $(function() {
@@ -6,9 +7,6 @@ $(function() {
     method: "POST",
     uploadMultiple: false,
     paramName: "file",
-    headers: {
-        "My-Awesome-Header": "header value"
-      },
     addRemoveLinks: "dictCancelUpload",
     autoProcessQueue: true,
     clickable: true,
@@ -19,12 +17,26 @@ $(function() {
     fallback: function() {
       console.log("fallback");
     },
+    success: function(file, response) {
+      console.log(response);
+      for (var i = 1; i <= 5; i++) {
+        var idName = "#result";
+        var url = response.results[i-1];
+        var title = "";
+        $.ajax({
+          url: url,
+          complete: function(data) {
+            var matches = data.responseText.match(/<title>(.*?)<\/title>/);
+            title = matches[0];
+            $(idName + i).attr('href', url).text(title);
+            // TODO;
+          }
+        });
+      }
+    },
     init: function() {
       this.on("sending", function() {console.log("sending file")});
       this.on("error", function(file) { console.log("error"); });
-      this.on("success", function(file, response) {
-         alert("Successfully uploaded file.");
-       });
     }
   };
 })
